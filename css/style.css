@@ -1,3 +1,6 @@
+:root {
+    --border: 1px solid #E4E7ED
+}
 * {
     margin: 0;
     padding: 0;
@@ -34,6 +37,9 @@ ol {
     max-width: 1100px;
     margin: 0 auto;
 }
+.nav > ul {
+    border-bottom: none !important;
+}
 
 /* 头部结束 */
 
@@ -43,7 +49,7 @@ ol {
     margin: 20px auto;
     display: flex;
     justify-content: space-between;
-    /* align-items: flex-start; */
+    align-items: flex-start;
 }
 
 .sidebar {
@@ -52,7 +58,7 @@ ol {
 
 .sidebar-item {
     background: #fff;
-    border: 1px solid #EBEEF5;
+    border: var(--border);
     margin-bottom: 20px;
 }
 
@@ -89,17 +95,19 @@ ol {
 .content {
     background: #fff;
     width: 72%;
-    border: 1px solid #EBEEF5;
-
+    border: var(--border);
+    padding-bottom: 80px;
 }
 
 .article-item {
-    padding: 0 16px;
+    padding: 10px 16px;
+    margin-bottom: 10px;
 }
 
 .article-item-title {
     font-weight: 400;
     padding: 10px 0;
+    font-size: 22px;
 }
 
 .article-item-title a {
@@ -108,11 +116,12 @@ ol {
 }
 
 .article-item-title a:hover {
-    color: #606266;
+    /* color: inherit; */
 }
 
 .article-item-detail {
-    font-size: 16px;
+    font-size: 15px;
+    line-height: 1.6;
     color: #606266;
 }
 
@@ -128,4 +137,26 @@ ol {
     margin-right: 4px;
 }
 
+
+.article-pagination {
+    margin-top: 20px;
+    text-align: center;
+}
+
 /* 网站主体结束 */
+
+
+/* 网站底部开始 */
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 16px 0;
+    background: #fff;
+    border-top: var(--border);;
+}
+
+.footer p {
+    line-height: 1.6;
+}
+
+/* 网站底部结束 */
