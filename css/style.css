@@ -43,6 +43,7 @@ ol {
     margin: 20px auto;
     display: flex;
     justify-content: space-between;
+    /* align-items: flex-start; */
 }
 
 .sidebar {
@@ -59,10 +60,13 @@ ol {
     color: #606266;
     line-height: 2.6;
     padding-left: 12px;
+    font-weight: 400;
 }
 
 .sidebar-item-detail {
     margin-bottom: 20px;
+    padding: 0 12px;
+    font-size: 15px;
 }
 
 .sidebar-item-detail li {
@@ -74,6 +78,7 @@ ol {
     display: block;
     width: 100%;
     line-height: 1.6;
+    font-size: 15px;
 }
 
 .sidebar-item-detail li:hover a {
@@ -85,6 +90,42 @@ ol {
     background: #fff;
     width: 72%;
     border: 1px solid #EBEEF5;
+
+}
+
+.article-item {
+    padding: 0 16px;
+}
+
+.article-item-title {
+    font-weight: 400;
+    padding: 10px 0;
+}
+
+.article-item-title a {
+    display: block;
+    width: 100%;
+}
+
+.article-item-title a:hover {
+    color: #606266;
+}
+
+.article-item-detail {
+    font-size: 16px;
+    color: #606266;
+}
+
+.article-item-span {
+    font-size: 14px;
+    margin-top: 6px;
+}
+
+.article-item-span span {
+    margin-right: 12px;
+}
+.article-item-span span i{
+    margin-right: 4px;
 }
 
 /* 网站主体结束 */
