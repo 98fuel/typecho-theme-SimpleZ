@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #f3f3f3;
+    font-size: 16px;
+}
+
+/* 头部开始 */
+.header {
+    width: 100%;
+    background: rgb(84, 92, 100);
+}
+
+.nav {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* 头部结束 */
