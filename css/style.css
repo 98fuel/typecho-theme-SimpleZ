@@ -4,8 +4,24 @@
 }
 
 body {
+    font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
     background: #f3f3f3;
     font-size: 16px;
+    color: #606266;
+}
+
+a {
+    color: #444;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #409eff;
+}
+
+ul,
+ol {
+    padding-left: 14px;
 }
 
 /* 头部开始 */
@@ -20,3 +36,55 @@ body {
 }
 
 /* 头部结束 */
+
+/* 网站主体开始 */
+.container {
+    max-width: 1100px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sidebar {
+    width: 25%;
+}
+
+.sidebar-item {
+    background: #fff;
+    border: 1px solid #EBEEF5;
+    margin-bottom: 20px;
+}
+
+.sidebar-item-title {
+    color: #606266;
+    line-height: 2.6;
+    padding-left: 12px;
+}
+
+.sidebar-item-detail {
+    margin-bottom: 20px;
+}
+
+.sidebar-item-detail li {
+    list-style: none;
+}
+
+.sidebar-item-detail li a {
+    color: #909399;
+    display: block;
+    width: 100%;
+    line-height: 1.6;
+}
+
+.sidebar-item-detail li:hover a {
+    color: #409eff
+}
+
+
+.content {
+    background: #fff;
+    width: 72%;
+    border: 1px solid #EBEEF5;
+}
+
+/* 网站主体结束 */
