@@ -1,0 +1,275 @@
+/*body {*/
+/*    font-family: "Helvetica Neue", "Microsoft Yahei", Helvetica, Arial, sans-serif;*/
+/*    font-size: 14px;*/
+/*    line-height: 1.42857143;*/
+/*    color: #333333;*/
+/*    background-color: #F7F7F7;*/
+
+/*}*/
+/*#page-wrapper {*/
+/*    padding-left: 0 !important;*/
+/*}*/
+/*#page-wrapper {*/
+/*    position: relative;*/
+
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*}*/
+/** {*/
+/*    -webkit-box-sizing: border-box;*/
+/*    -moz-box-sizing: border-box;*/
+/*    box-sizing: border-box;*/
+/*}*/
+/*.page-blank-wrap {*/
+/*    overflow: hidden;*/
+/*    width: 800px;*/
+/*    margin: 25px auto 0;*/
+/*    padding: 0 20px;*/
+/*}*/
+/*.page-blank-wrap .site-error {*/
+/*    margin-bottom: 30px;*/
+/*    text-align: center;*/
+/*}*/
+/*h1 {*/
+/*    font-size: 2em;*/
+/*    margin: 0.67em 0;*/
+/*}*/
+/*h1, .h1 {*/
+/*    font-size: 36px;*/
+/*}*/
+/*h1, .h1, h2, .h2, h3, .h3 {*/
+/*    margin-top: 20px;*/
+/*    margin-bottom: 10px;*/
+/*}*/
+/*h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {*/
+/*    font-family: inherit;*/
+/*    font-weight: 500;*/
+/*    line-height: 1.1;*/
+/*    color: inherit;*/
+/*}*/
+/*img {*/
+/*    vertical-align: middle;*/
+/*}*/
+/*img {*/
+/*    border: 0;*/
+/*}*/
+/*.page-blank-wrap .site-error {*/
+/*    margin-bottom: 30px;*/
+/*    text-align: center;*/
+/*}*/
+/*h4, .h4 {*/
+/*    font-size: 18px;*/
+/*}*/
+/*h4, .h4, h5, .h5, h6, .h6 {*/
+/*    margin-top: 10px;*/
+/*    margin-bottom: 10px;*/
+/*}*/
+/*h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {*/
+/*    font-family: inherit;*/
+/*    font-weight: 500;*/
+/*    line-height: 1.1;*/
+/*    color: inherit;*/
+/*}*/
+/*a {*/
+/*    color: #4a90e6;*/
+/*    text-decoration: none;*/
+/*}*/
+
+
+/*
+ * 作者: QYZQ
+ * 时间:2018.2.4
+ * 备注:404页面设计灵感源于FreePik网站图片(https://www.freepik.com/free-vector/funny-error-404-background-design_1161579.htm#term=404&page=1&position=2),
+ * 		FreePik网站提供免费下载渠道,网站也有提示侵权的通知,如有侵权请联系(Email: greatyuzequn@outlook.com),QYZQ将及时处理.
+ */
+
+body, div, p, a{
+	margin: 0px;
+	padding: 0px;
+}
+
+p{
+	text-decoration: none;
+	user-select: none;
+}
+
+html, body{
+	width: 100%;
+	height: 100%;
+}
+
+body{
+	background: linear-gradient(#c7c8cf,#e8e8e9,#c7c8cf);
+	overflow: hidden;
+}
+
+.code{
+	display: block;
+	width: 100%;
+	height: 120px;
+	line-height: 120px;
+}
+
+.code p{
+	height: inherit;
+	line-height: inherit;
+	text-align: center;
+	font-family: BalboaWide Bold;
+	font-size: 50px;
+	color: #697a8a;
+	opacity: 1;
+}
+
+.road{
+	width: 100%;
+	height: 600px;
+}
+
+.road .shadow{
+	position: relative;
+	margin: auto;
+	margin-top: 25%;
+	width: 330px;
+	height: 70px;
+	border:0px;
+	background: linear-gradient(#777373,#3c3c3c);
+	box-shadow: 0px 3px 10px 2px #464646, 0px -3px 10px 2px #3a3939 inset;
+	border-radius: 100%;
+}
+
+.road p{
+	display: block;
+	margin-top: 50px;
+	height: inherit;
+	line-height: inherit;
+	text-align: center;
+	font-family: BalboaWide Bold;
+	font-size: 30px;
+	color: #697a8a;
+	opacity: 1;
+}
+.road .shadow .bubble{
+	display: block;
+	position: absolute;
+	top: -180px;
+	left: 350px;
+	width: 246px;
+	height: 179px;
+	background-image: url(../img/bubble.png);
+	background-repeat: no-repeat;
+	text-align: center;
+}
+
+.road .shadow .bubble a{
+	line-height: 140px;
+	font-family: "microsoft yahei";
+	font-size: 1.5em;
+	color: #F8F8F5;
+	letter-spacing: 1px;
+	text-decoration: none;
+	transition: 1s;
+	user-select:none;
+}
+
+.road .shadow .bubble a:hover{
+	color: #FF8C00;
+}
+
+.road .shadow .shelt{
+	position: absolute;
+	margin: auto;
+	margin-top: -80px;
+	width: 330px;
+	height: 150px;
+	border:0px;
+	border-radius: 100%;
+	overflow: hidden;
+	background: transparent;
+}
+.road .shadow .head{
+	position: absolute;
+	left: 50%;
+	margin-left: -60px;
+	top: 150px;
+	width: 120px;
+	height: 300px;
+	border: 0px;
+	border-radius: 100% 100% 0 0;
+	background-color: #292d38;
+}
+
+.road .shadow .head .eyes{
+	width: 100%;
+	height: 50px;
+	margin-top: 70px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+}
+
+.road .shadow .head .eyes .lefteye,.road .shadow .head .eyes .righteye{
+	position: relative;
+	width: 38px;
+	height: 38px;
+	border-radius: 100%;
+	background-color: #f1f2f4;
+}
+
+.road .shadow .head .eyes .lefteye .eyebrow{
+	position: absolute;
+	width: 38px;
+	left: 0px;
+	top: 0px;
+	height: 19px;
+	border-radius: 19px 19px 0 0;
+	background-color:#4c5465;
+	clip: rect(0px 38px 0px 0px);
+}
+
+.road .shadow .head .eyes .righteye .eyebrow{
+	position: absolute;
+	width: 38px;
+	left: 0px;
+	top: 0px;
+	height: 19px;
+	border-radius: 19px 19px 0 0;
+	background-color:#4c5465;
+	clip: rect(0px 38px 0px 0px);
+}
+
+
+.road .shadow .head .eyes .lefteye .eyeball{
+	position: absolute;
+	width: 10px;
+	left: 50%;
+	top: 50%;
+	margin-top: -5px;
+	margin-left: -5px;
+	height: 10px;
+	border-radius: 100%;
+	background-color:#292d38 ;
+}
+
+.road .shadow .head .eyes .righteye .eyeball{
+	position: absolute;
+	width: 10px;
+	left: 50%;
+	top: 50%;
+	margin-top: -5px;
+	margin-left: -5px;
+	height: 10px;
+	border-radius: 100%;
+	background-color:#292d38 ;
+}
+
+.road .shadow .hat{
+	position: absolute;
+	top: -297px;
+	left: -8px;
+	width: 330px;
+	height: 330px;
+	background: url(../img/sign.png) no-repeat;
+	transform-origin: left bottom;
+	transform: rotate(17deg);
+}

@@ -1,0 +1,219 @@
+#comments {
+    overflow: hidden;
+}
+
+textarea,input {
+    font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+.textarea {
+    width:100%;
+    border: 1px solid #bbb;
+    outline: none;
+    box-sizing: border-box;
+    font-size: 15px;
+    border-radius: 2px;
+}
+.form-item {
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-item > div {
+    width: 30%;
+}
+
+.form-item > div > input {
+    border: 1px solid #bbb;
+    border-radius: 2px;
+    outline: none;
+    box-sizing: border-box;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    display: inline-block;
+}
+
+.form-submit button{
+    color: #fff;
+    border: none;
+    outline: none;
+    width: 96px;
+    height: 34px;
+    border-radius: 4px;
+    background: #000;
+    -webkit-transition: background 0.2s ease-out;
+    -moz-transition: background 0.2s ease-out;
+    -ms-transition: background 0.2s ease-out;
+    -o-transition: background 0.2s ease-out;
+    transition: background 0.2s ease-out;
+}
+.form-submit button:hover {
+    cursor: pointer;
+    background: #444;
+}
+
+
+.comment-aite{
+    display: none;
+}
+
+
+.pinglun .t-u {
+    border: none;   
+}
+
+
+.comment-title{
+    background: #fff;
+    border: none;
+    overflow: hidden;
+}
+
+.comment-badge {
+    display: inline-block;
+    background: #373a3c;
+    color: #fff;
+    margin-left: 6px;
+    border-radius: 3px;
+    width: 48px;
+    text-align: center;
+}
+
+.comment-children .comment-title {
+    border: none;
+}
+.comment-children .comment-title strong {
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;    
+    color: #1E9FFF;
+}
+
+.comment-children .comment-title strong a {
+    color: #1E9FFF;
+}
+
+.comment-parent>.pl-dan>.comment-author>.comment-title strong {
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;    
+    color: #1E9FFF;
+}
+.comment-parent>.pl-dan>.comment-author>.comment-title strong a{
+    color: #1E9FFF;
+}
+.pinglun .t-u .t-g{
+    float: none;
+    font-weight: 400;
+    color: #000;
+    font-size: 13px;
+    padding: 0;
+    color: #686868;
+    display: block;
+}
+
+
+.comment-list{
+    overflow: hidden;
+}
+.comment-parent{
+    position: relative;
+    width: 98%;
+    float: right;
+}
+.pinglun .t-p{
+    position: absolute;
+    left: -50px;
+    top: 10px;
+}
+.pinglun .t-u {
+    margin-left: 0;
+}
+
+.comment-children .pl-dan{
+    margin-top: 0;
+}
+
+.pinglun li{
+    margin-bottom: 0;
+}
+
+.pinglun>.comment-list>li{
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee;
+}
+
+.comment-children .pl-dan{
+    position: relative;
+}
+.comment-children .t-p {
+    position: absolute;
+    z-index: 9;
+    margin: 5px;
+}
+.comment-children .t-p img{
+    width: 100%;
+    height: 100%;
+}
+.comment-children .t-s {
+    padding-bottom: 0;
+}
+
+.pinglun .t-p img {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+}
+
+
+.pinglun .t-s {
+    padding: 10px 10px 20px;
+    word-break: break-all;
+    position: relative;
+    border-radius: 5px;
+}
+.pinglun .t-u .t-btn {
+    float: none;
+    bottom: 10px;
+    right: 0;
+}
+
+.pinglun .t-u .t-btn a {
+    color: #909090 !important;
+}
+.pinglun .t-u .t-btn a:hover {
+    text-decoration: underline;
+    color: #444;
+}
+.pinglun .t-s {
+    margin-top: 0;
+    padding-top: 0;
+    font-size: 15px;
+    color: #212529 !important;
+    font-family: Open Sans,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+}
+@media (max-width: 520px){
+    .comment-parent{
+        width: 108%;
+    }
+    .comment-children .comment-title {
+        padding-left: 54px;
+        min-height: 40px;
+    }
+    .pinglun .t-p {
+        left: 0;
+    }
+    .comment-parent>.pl-dan>.comment-author>.comment-title {
+        padding-left: 60px;
+    }
+    .pinglun .t-u .t-btn {
+        display: block;
+    }
+    .form-item > div {
+        width: 100%;
+    }
+}
+
+
+
