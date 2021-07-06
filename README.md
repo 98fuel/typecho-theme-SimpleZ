@@ -22,3 +22,6 @@ SimpleZ 一款基于 typecho 的简约风单栏博客主题，专注于写作，
 ![](./img/post.png)
 ![](./img/page.png)
 
+## LICENSE
+
+[LICENSE](./LICENSE)
