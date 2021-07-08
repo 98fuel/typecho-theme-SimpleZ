@@ -20,7 +20,7 @@ $("#gotop").click(function(){
 })
   
 //  iframe
-$('iframe').wrap('<p class="video"></p>')
+$('iframe').wrap('<p class="iframe"></p>')
 
 
  
