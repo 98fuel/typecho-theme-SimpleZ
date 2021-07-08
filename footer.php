@@ -9,7 +9,7 @@
     <span>&nbsp;<?php echo theAllViews();?></span>
     
     <div style="padding:10px 0;">
-        <span>&copy; 2020 - <?php echo date('Y'); ?>&nbsp;<?php $this->options->title() ?> </span>&nbsp;
+        <span>&copy;  <?php echo date('Y'); ?>&nbsp;<?php $this->options->title() ?> </span>&nbsp;
         <span> 备案号请复制粘贴到 footer.php 文件中 </span>
     </div>
 
