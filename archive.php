@@ -24,7 +24,7 @@
                 <span class="article-list-time"><?php $this->date('Y-m-d'); ?></span>
                 <div class="article-list-title">
                     <a href="<?php $this->permalink() ?>">
-                       <?php $this->sticky();$this->title() ?>
+                       <?php $this->title() ?>
                     </a>
                     <span class="tags"><?php $this->tags('&nbsp;&nbsp;', true, 'none'); ?></span>
                 </div>
