@@ -13,7 +13,7 @@
                 <div class="title-msg">
                     <span>发布于 <?php $this->date('Y-m-d'); ?> </span>
                     <span>分类：<?php $this->Category(', ', true, 'none'); ?></span>~
-                    <span>本文共 <?php echo art_count($this->cid); ?> 字</span>~
+                    // <span>本文共 <?php echo art_count($this->cid); ?> 字</span>~
                     <span>阅读: <?php echo ViewsCounter_Plugin::getViews(); ?></span>
                 </div>
             </div>
