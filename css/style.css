@@ -96,6 +96,10 @@ hr {
     margin: 0 6px;
 }
 
+.active {
+    border-bottom: 1px solid #ccc;
+}
+
 .main {
     max-width: 100%;
     padding: 0 2%;
@@ -181,11 +185,60 @@ hr {
     position: relative;
 }
 
+#theContentIndex>ul{
+    max-height: 500px !important;
+    overflow-y: scroll;
+}
+
+#theContentIndex li {
+    margin: 2px 0;
+}
+#theContentIndex li a{
+    color: #666;
+}
+#theContentIndex li:hover a {
+    color: #444;
+}
+
+.simple-mulu {
+    position: relative;
+    height: 1px;
+    background: none;
+}
+.simple-mulu a{
+    position: absolute;
+    left: 0;
+    bottom: -55px;
+    display: block;
+    width: 25px;
+    height: 40px;
+    background: #fff;
+}
+.simple-mulu a::after {
+    width: 100%;
+    text-align: center;
+    content: '#';
+    color: #000;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    line-height: 40px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.post-content h2 {
+    font-size: 20px;
+    padding-left: 30px;
+    box-sizing: border-box;
+}
+
 #theContentIndex {
     position: sticky;
     right: -200px;
     top: 60px;
-    width: 300px;
+    width: max-content;
     margin-left: 102%;
     height: 0;
 }
@@ -213,6 +266,12 @@ hr {
     text-decoration: underline;
     color: #e77912;
 }
+.post-content>a>i{
+    display: none;
+}
+.post-content #theContentIndex i{
+    display: none;
+}
 
 blockquote {
     font-style: italic;
@@ -231,10 +290,11 @@ blockquote {
 }
 .post code {
     font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;;
-    background: #f3f3f3;
-    border: 1px solid #e77912;
-    padding: 2px 4px;
+    background: #fafafa;
+    border: 1px solid #ddd;
+    padding: 0px 4px;
     border-radius: 4px;
+    color: #dd0055;
 }
 
 .post-content .code-toolbar code {
@@ -250,7 +310,7 @@ pre.line-numbers {
     padding-left: 2.3rem;
 }
 .line-numbers .line-numbers-rows {
-    left: -3.1rem;
+    left: -2.8rem;
 }
 
 .line-numbers-rows>span:before {
