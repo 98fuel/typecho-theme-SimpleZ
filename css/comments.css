@@ -84,7 +84,7 @@ textarea,input {
     border: none;
 }
 .comment-children .comment-title strong {
-    font-size: 16px;
+    font-size: 14px;
     display: flex;
     justify-content: space-between;    
     color: #1E9FFF;
@@ -113,10 +113,6 @@ textarea,input {
     display: block;
 }
 
-
-.comment-list{
-    overflow: hidden;
-}
 .comment-parent{
     position: relative;
     width: 98%;
@@ -173,12 +169,17 @@ textarea,input {
     position: relative;
     border-radius: 5px;
 }
+.pinglun .t-s p {
+    margin-top: 0;
+}
 .pinglun .t-u .t-btn {
     float: none;
     bottom: 10px;
     right: 0;
 }
-
+.comment-title strong p {
+    margin-bottom: 0;
+}
 .pinglun .t-u .t-btn a {
     color: #909090 !important;
 }
@@ -210,8 +211,12 @@ textarea,input {
     .pinglun .t-u .t-btn {
         display: block;
     }
+    .form-item {
+        display: block;
+    }
     .form-item > div {
         width: 100%;
+        margin: 6px 0;
     }
 }
 
