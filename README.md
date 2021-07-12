@@ -18,7 +18,7 @@ SimpleZ 一款基于 typecho 的简约风单栏博客主题，专注于写作，
 
 ## 插件
 
-**ContentIndex**
+### 1. ContentIndex
 
 为多个标题的文章生成目录。
 
@@ -26,7 +26,7 @@ ps: 下面是专门修改过的插件，专为适配本主题，使用其他插�
 
 下载地址：[https://github.com/shuxhan/SimpleZ-ContentIndex](https://github.com/shuxhan/SimpleZ-ContentIndex)
 
-**ViewsCounter**
+### 2. ViewsCounter
 
 文章浏览量统计插件，可设置对同一篇文章的多次浏览行为是否计入浏览量的时间间隔。
 
