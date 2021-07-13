@@ -1,4 +1,4 @@
-<div style="text-align:center;max-width:300px;"><img style="width:100%;" src="./screenshot.png"></div>
+<font style="text-align:center;max-width:400px;"><img style="width:100%" src="./screenshot.png"></font>
 
 ## SimpleZ
 
