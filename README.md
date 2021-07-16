@@ -1,4 +1,4 @@
-<font style="text-align:center;max-width:400px;"><img style="width:100%" src="./screenshot.png"></font>
+<font style="text-align:center;max-width:400px;"><img style="width:100%" src="./typecho-theme-SimpleZ.webp"></font>
 
 ## SimpleZ
 
