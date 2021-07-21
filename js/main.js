@@ -22,7 +22,6 @@ $("#gotop").click(function(){
 //  iframe
 $('iframe').wrap('<p class="iframe"></p>')
 
-
  
 // 导航栏
 function block() {
@@ -58,12 +57,24 @@ for(var i=1;i<myNav.length;i++){
     myNav[i].className="active";
     myNav[0].className="";
    }
- }
- 
-if(window.location.pathname=="/"){$('.header .nav li:nth-child(2) a').attr('class','active')}
+}
 
- 
+if(window.location.pathname=="/"){$('.header .nav li:nth-child(1) a').attr('class','active')}
+
+window.addEventListener('scroll', function () {
+    var scrollTop = document.documentElement.scrollTop;
+    if (scrollTop > 66) {
+        $('.header').css('background','#29292a')
+        $('.nav li a').css('color','#fff')
+        $('.header-wrap>div').html($('.post-title'))
+        $('.post-title').attr('class','post-title post-title-logo')
+    }else{
+        $('.header').css('background','#fff')
+        $('.nav li a').css('color','#343434')
+        $('.post-title-wrap').append($('.post-title'))
+        $('.post-title').attr('class','post-title')
+    }
+})
 
 console.log('An interesting soul is very attractive.')
 console.log('世界与你我皆美好！')
-
