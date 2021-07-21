@@ -1,7 +1,25 @@
+::-webkit-scrollbar {
+    width: 16px;
+    height: 4px;
+}
+::-webkit-scrollbar-track {
+    background: #f6f6f6;
+    border-radius: 2px;
+}
+::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #747474;
+}
+::-webkit-scrollbar-corner {
+    background: #f6f6f6;
+}
 body, html {
-    height: 100%;
+    height: auto;
     background: #fff;
-    font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 16px;
     color: #3b3b3b;
     padding: 0;
@@ -12,6 +30,7 @@ ul,ol {
     list-style: none;
 }
 a {
+    word-break: break-word;
     color: #026ed2;
     text-decoration: none;
     border-bottom: 3px solid transparent;
@@ -52,21 +71,30 @@ hr {
 #content_progress::-moz-progress-bar {
   background-color: #00a4ff;
 }
+
 .header {
     width: 100%;
     height: 60px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    transition: all 0.2s linear;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -ms-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
 }
 
 .header-wrap {
-    max-width: 800px;
+    max-width: 750px;
     margin: 0 auto;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     height: 100%;
 }
 .logo {
     position: fixed;
-    top: 13px;
+    top: 12px;
     left: 13px;
     z-index: 200;
     display: block;
@@ -107,9 +135,20 @@ hr {
 }
 
 .main ul {
-    max-width: 800px;
+    max-width: 750px;
     margin: 0 auto;
     padding: 0;
+}
+.post-title-wrap {
+    min-height: 52px;
+}
+
+.post-content ul,
+.post-content ol{
+    padding-left: 26px;
+}
+.post-content li{
+    line-height: 26px;
 }
 
 .article-list {
@@ -143,7 +182,7 @@ hr {
 }
 
 .post {
-    max-width: 800px;
+    max-width: 750px;
     margin: 0 auto;
 }
 .post-title {
@@ -153,6 +192,14 @@ hr {
     font-weight: bold;
     padding: 10px 0;
     margin-top: 6px;
+}
+.page-header {
+    min-height: 49px;
+}
+.post-title-logo {
+    color: #fff;
+    font-weight: 400;
+    font-size: 18px;
 }
 .iframe{
   position: relative;
@@ -169,78 +216,42 @@ hr {
 }
 .title-msg {
     font-size: 14px;
-    color: #bbb;
+    color: #999;
     margin-top: 6px;
     border-bottom: 1px solid #eee;
     padding-bottom: 5px;
 }
 
 .title-msg a {
-    color: #bbb;
+    color: #999;
 }
 
 .post-content {
-    color: #333332;
+    color: #444;
     font-size: 15px;
     position: relative;
 }
 
-#theContentIndex>ul{
-    max-height: 500px !important;
-    overflow-y: scroll;
+.comments {
+    margin-bottom: 50px;
 }
 
-#theContentIndex li {
-    margin: 2px 0;
-}
-#theContentIndex li a{
-    color: #666;
-}
-#theContentIndex li:hover a {
-    color: #444;
-}
-
-.simple-mulu {
-    position: relative;
-    height: 1px;
-    background: none;
-}
-.simple-mulu a{
-    position: absolute;
-    left: 0;
-    bottom: -55px;
-    display: block;
-    width: 25px;
-    height: 40px;
-    background: #fff;
-}
-.simple-mulu a::after {
-    width: 100%;
-    text-align: center;
-    content: '#';
-    color: #000;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    display: block;
-    line-height: 40px;
-    font-size: 25px;
-    font-weight: bold;
-}
-
-.post-content h2 {
-    font-size: 20px;
-    padding-left: 30px;
-    box-sizing: border-box;
-}
 
 #theContentIndex {
     position: sticky;
     right: -200px;
-    top: 60px;
+    top: 100px;
     width: max-content;
-    margin-left: 102%;
+    margin-left: 103%;
     height: 0;
+}
+#theContentIndex h3 {
+    display: inline;
+    color: #0e83cd;
+    font-size: 15px;
+    padding: 0;
+    padding-top: 10px;
+    border-top: 1px solid #e3e3e3;
 }
 #theContentIndex li{
     list-style: none;
@@ -248,6 +259,8 @@ hr {
 #theContentIndex>ul {
     max-height: 900px !important;
     overflow-y: hidden;
+    padding-left: 0;
+    padding-top: 20px;
 }
 #theContentIndex>ul>ul{
     padding-left: 16px;
@@ -255,7 +268,6 @@ hr {
 .post-content>p {
     margin: 1em 0;
     line-height: 1.8em;
-    color: #333332;
     word-wrap: break-word;
 }
 .post-content ul,
@@ -300,7 +312,7 @@ blockquote {
 .post-content .code-toolbar code {
     font-family: inherit;
     border: none;
-    background: #2d2d2d;
+    background: none;
 }
 .code-toolbar{
     font-size: 14px;
@@ -308,9 +320,12 @@ blockquote {
 
 pre.line-numbers {
     padding-left: 2.3rem;
+    padding-top: 26px;
+    background: #f3f3f3;
 }
 .line-numbers .line-numbers-rows {
     left: -2.8rem;
+    border: none;
 }
 
 .line-numbers-rows>span:before {
@@ -318,12 +333,22 @@ pre.line-numbers {
 }
 div.code-toolbar > .toolbar {
     opacity: 1;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-left: 10px;
+    padding-top: 2px;
+    box-sizing: border-box;
 }
 div.code-toolbar > .toolbar a, 
 div.code-toolbar > .toolbar button, 
 div.code-toolbar > .toolbar span {
     background: none;
     box-shadow: none;
+    color: #444;
+    font-size: 14px;
 }
 
 div.code-toolbar > .toolbar a:hover, 
@@ -332,7 +357,10 @@ div.code-toolbar > .toolbar button:hover,
 div.code-toolbar > .toolbar button:focus, 
 div.code-toolbar > .toolbar span:hover, 
 div.code-toolbar > .toolbar span:focus {
-    color: #bbb;
+    color: #444;
+}
+div.code-toolbar > .toolbar .toolbar-item:nth-child(2) button:hover{
+    cursor: pointer;
 }
 
 .map {
@@ -356,6 +384,7 @@ div.code-toolbar > .toolbar span:focus {
     font-size: 14px;
     color: #666;
     padding: 10px;
+    line-height: 24px;
 }
 
 
@@ -363,7 +392,17 @@ div.code-toolbar > .toolbar span:focus {
     text-align: center;
     font-size: 14px;
     margin-top: 30px;
-    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+.tags-content a {
+    display: inline-block;
+    margin: 4px 10px;
+    padding: 2px 6px;
+    color: #026ed2;
+}
+.tags-content a:hover {
+    text-decoration: underline;
 }
 
 #gotop {
