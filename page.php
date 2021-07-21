@@ -3,8 +3,10 @@
 
 <div class="main">
     <div class="post" itemprop="articleBody">
-        <div class="post-title">
-            <?php $this->title() ?>
+        <div class="post-title-wrap">
+            <div class="post-title">
+                <?php $this->title() ?>
+            </div>
         </div>
         
         <div class="post-content">
