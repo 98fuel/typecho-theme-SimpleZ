@@ -33,11 +33,10 @@ echo $commentClass;
                 <strong>
                     <p>
                         <?php $comments->author(); ?>
-                        <span class="comment-badge"><?php echo $group; ?></span>
                         <span class="t-g"><?php $comments->date('Y-m-d H:i'); ?></span>
+                        <span class="comment-badge"><?php echo $group; ?></span>
                     </p>
                     <p>
-                        
                         <span class="t-btn"><?php $comments->reply(); ?> </span> 
                     </p>
                 </strong>
@@ -47,11 +46,8 @@ echo $commentClass;
             <div class="comment-aite">
                 <b><?php echo getPermalinkFromCoid($comments->parent); ?></b>
             </div>
-            <div class="t-s" style="color:#333">
-                <p>
-                    <?php $comments->content(); ?>
-                    
-                </p>
+            <div class="t-s">
+                <?php $comments->content(); ?>
             </div>
        
         </div><!-- 单条评论者信息及内容 -->
@@ -107,9 +103,9 @@ echo $commentClass;
                     
                    
                 </div>
-                <div style="font-size:14px;margin-bottom:10px">
-                    （邮箱并非是必填项，如果你想要得到别人的回复建议填写邮箱，如果只是简单的留言可以把邮箱空着，不要随手写一些例如：11@11.com 的垃圾邮箱，多次发现后，将会屏蔽您的ip，多谢。请友善评论，创造美好生活！）
-                </div>
+               <div style="font-size:14px;margin-bottom:10px;margin-top:10px">
+                        （邮箱并非是必填项，如果你期待得到别人的回复，建议填写邮箱，如果只是简单的留言可以把邮箱空着，不要随手写一些例如：11@11.com 的垃圾邮箱，多次发现后，将会屏蔽您的ip，多谢。请友善评论，创造美好生活！）
+                    </div>
                 <?php endif; ?>
                 
                 <div class="form-submit">
