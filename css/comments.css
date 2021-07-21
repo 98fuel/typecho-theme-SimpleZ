@@ -17,10 +17,11 @@ textarea,input {
     font-size: 15px;
     display: flex;
     justify-content: space-between;
+    margin-top: 4px;
 }
 
 .form-item > div {
-    width: 30%;
+    width: 32%;
 }
 
 .form-item > div > input {
@@ -57,7 +58,9 @@ textarea,input {
 .comment-aite{
     display: none;
 }
-
+.comment-list {
+    overflow: hidden;
+}
 
 .pinglun .t-u {
     border: none;   
@@ -110,7 +113,6 @@ textarea,input {
     font-size: 13px;
     padding: 0;
     color: #686868;
-    display: block;
 }
 
 .comment-parent{
@@ -137,7 +139,6 @@ textarea,input {
 
 .pinglun>.comment-list>li{
     margin-bottom: 30px;
-    border-bottom: 1px solid #eee;
 }
 
 .comment-children .pl-dan{
@@ -157,18 +158,24 @@ textarea,input {
 }
 
 .pinglun .t-p img {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
 }
 
 
 .pinglun .t-s {
-    padding: 10px 10px 20px;
+    margin-top: 10px;
+    padding: 14px 10px 1px;
     word-break: break-all;
     position: relative;
     border-radius: 5px;
+    font-size: 14px;
+    background: #eee;
+    color: #333 !important;
+    font-family: Helvetica,Tahoma,Arial,"PingFang SC","Hiragino Sans GB","Heiti SC","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;
 }
+
 .pinglun .t-s p {
     margin-top: 0;
 }
@@ -187,14 +194,11 @@ textarea,input {
     text-decoration: underline;
     color: #444;
 }
-.pinglun .t-s {
-    margin-top: 0;
-    padding-top: 0;
-    font-size: 15px;
-    color: #212529 !important;
-    font-family: Open Sans,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-}
+
 @media (max-width: 520px){
+    .comment-list {
+        padding-left: 28px;
+    }
     .comment-parent{
         width: 108%;
     }
@@ -205,8 +209,11 @@ textarea,input {
     .pinglun .t-p {
         left: 0;
     }
+    .pinglun .t-s {
+        margin-top: 30px;
+    }
     .comment-parent>.pl-dan>.comment-author>.comment-title {
-        padding-left: 60px;
+        padding-left: 50px;
     }
     .pinglun .t-u .t-btn {
         display: block;
@@ -219,6 +226,3 @@ textarea,input {
         margin: 6px 0;
     }
 }
-
-
-
