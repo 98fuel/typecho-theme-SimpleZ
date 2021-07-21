@@ -24,10 +24,9 @@
 <body>
 <div class="header">
     <div class="header-wrap">
-        <a class="logo" href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title() ?></a>
-       
+        <a class="logo" href="<?php $this->options->siteUrl(); ?>">求索日记</a>
+        <div></div>
         <ul class="nav" id="nav">
-          
             <li class="nav-item <?php if($this->is('index')): ?><?php endif; ?>">
                 <a href="<?php $this->options->siteUrl(); ?>"><?php _e('首页'); ?></a> 
             </li>
