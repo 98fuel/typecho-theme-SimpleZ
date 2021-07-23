@@ -1,4 +1,4 @@
-<font style="text-align:center;max-width:400px;"><img style="width:100%" src="./typecho-theme-SimpleZ.webp"></font>
+<font style="text-align:center;max-width:400px;"><img style="width:100%" src="./screenshot.png"></font>
 
 ## SimpleZ
 
@@ -7,6 +7,8 @@ SimpleZ 一款基于 typecho 的简约风单栏博客主题，专注于写作，
 占用极小，主要代码不到 200KB，是轻量级博客中的轻量级主题。
 
 在线demo: [https://shuxhan.com](https://shuxhan.com)
+
+使用中出现问题请提 issues
 
 ## 介绍
 
