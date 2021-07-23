@@ -12,6 +12,7 @@ textarea,input {
     box-sizing: border-box;
     font-size: 15px;
     border-radius: 2px;
+    padding: 5px;
 }
 .form-item {
     font-size: 15px;
@@ -36,6 +37,8 @@ textarea,input {
 }
 
 .form-submit button{
+    font-size: 14px;
+    font-family: 'NotoSansSC', sans-serif;
     color: #fff;
     border: none;
     outline: none;
@@ -58,14 +61,10 @@ textarea,input {
 .comment-aite{
     display: none;
 }
-.comment-list {
-    overflow: hidden;
-}
 
 .pinglun .t-u {
     border: none;   
 }
-
 
 .comment-title{
     background: #fff;
@@ -113,6 +112,7 @@ textarea,input {
     font-size: 13px;
     padding: 0;
     color: #686868;
+    margin-left: 10px;
 }
 
 .comment-parent{
@@ -170,10 +170,9 @@ textarea,input {
     word-break: break-all;
     position: relative;
     border-radius: 5px;
-    font-size: 14px;
+    font-size: 15px;
     background: #eee;
-    color: #333 !important;
-    font-family: Helvetica,Tahoma,Arial,"PingFang SC","Hiragino Sans GB","Heiti SC","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;
+    color: #333;
 }
 
 .pinglun .t-s p {
@@ -189,10 +188,11 @@ textarea,input {
 }
 .pinglun .t-u .t-btn a {
     color: #909090 !important;
+    font-weight: 300;
 }
 .pinglun .t-u .t-btn a:hover {
     text-decoration: underline;
-    color: #444;
+    color: #444 !important;
 }
 
 @media (max-width: 520px){
@@ -226,3 +226,6 @@ textarea,input {
         margin: 6px 0;
     }
 }
+
+
+
