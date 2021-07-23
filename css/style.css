@@ -1,3 +1,7 @@
+:root {
+    --width: 750px;
+}
+
 ::-webkit-scrollbar {
     width: 16px;
     height: 4px;
@@ -16,6 +20,12 @@
 ::-webkit-scrollbar-corner {
     background: #f6f6f6;
 }
+
+@font-face {
+  font-family: 'NotoSansSC';
+  src: url('https://cdn.jsdelivr.net/gh/shuxhan/pic-cdn/NotoSansSC-Regular.otf');
+}
+
 body, html {
     height: auto;
     background: #fff;
@@ -24,6 +34,11 @@ body, html {
     color: #3b3b3b;
     padding: 0;
     margin: 0;
+}
+@media (min-width:520px) {
+    body,html {
+        font-family: 'NotoSansSC', sans-serif;
+    }
 }
 
 ul,ol {
@@ -86,7 +101,7 @@ hr {
 }
 
 .header-wrap {
-    max-width: 750px;
+    max-width: var(--width);
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -94,8 +109,9 @@ hr {
 }
 .logo {
     position: fixed;
-    top: 12px;
+    top: 10px;
     left: 13px;
+    font-size: 17px;
     z-index: 200;
     display: block;
     padding: 9px 12px 6px;
@@ -106,6 +122,10 @@ hr {
     -ms-transition: background 0.6s ease-out;
     -o-transition: background 0.6s ease-out;
     transition: background 0.6s ease-out;
+}
+
+.logo img{
+    height: 60px;
 }
 
 .logo:hover{
@@ -124,18 +144,26 @@ hr {
     margin: 0 6px;
 }
 
+.nav li .search{
+    width: 24px;
+    padding-top: 2px;
+    margin-left: 10px;
+}
+.nav li .search:hover {
+    cursor: pointer;
+}
+
 .active {
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #343434;
 }
 
 .main {
     max-width: 100%;
-    padding: 0 2%;
     padding-top: 10px;
 }
 
 .main ul {
-    max-width: 750px;
+    max-width: var(--width);
     margin: 0 auto;
     padding: 0;
 }
@@ -168,7 +196,7 @@ hr {
     color: #3287c1;
 }
 .article-list-title > a {
-    font-size: 16px;
+    font-size: 18px;
     color: #3b3b3b;
     padding: 10px 0;
     display: inline-block;
@@ -182,7 +210,7 @@ hr {
 }
 
 .post {
-    max-width: 750px;
+    max-width: var(--width);
     margin: 0 auto;
 }
 .post-title {
@@ -227,9 +255,12 @@ hr {
 }
 
 .post-content {
-    color: #444;
-    font-size: 15px;
+    color: #666;
+    font-size: 16px;
     position: relative;
+}
+.post-content h2, .post-content h3 {
+    color: #333;
 }
 
 .comments {
@@ -283,6 +314,9 @@ hr {
 }
 .post-content #theContentIndex i{
     display: none;
+}
+.post-content strong{
+    color: #3b3b3b;
 }
 
 blockquote {
@@ -363,8 +397,16 @@ div.code-toolbar > .toolbar .toolbar-item:nth-child(2) button:hover{
     cursor: pointer;
 }
 
+.ins-search-container {
+    z-index: 99999;
+}
+.ins-search-item>.header {
+    background: none !important;
+    height: 20px !important;
+}
+
 .map {
-    max-width: 800px;
+    max-width: var(--width);
     margin: 0 auto;
 }
 
@@ -409,6 +451,10 @@ div.code-toolbar > .toolbar .toolbar-item:nth-child(2) button:hover{
     position: fixed;
     bottom: 20px;
     right: 20px;
+    z-index: 99999;
+}
+#gotop img{
+    width: 40px;
 }
 #gotop:hover {
     cursor: pointer;
@@ -422,14 +468,71 @@ div.code-toolbar > .toolbar .toolbar-item:nth-child(2) button:hover{
     .article-list-title>* {
         display: block;
     }
+    .main {
+    padding: 0 3%;
+    }
 }
 @media (max-width:1268px) {
     #theContentIndex {
         display: none;
     }
 }
+
 @media (max-width:956px){
     .header-wrap>div>*{
         display: none;
     }
+}
+
+/*网页未加载时执行动画*/
+.loading{
+    width: 100px;
+    height: 100px;
+    position: relative;
+}
+.loading::before,.loading::after{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    background: #000;
+    border-radius: 50%;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    animation: toBig 1s linear infinite;
+}
+.loading::after{
+    animation-delay: 0.5s;
+}
+@keyframes toBig {
+    0%{
+        width: 0;
+        height: 0;
+        opacity: 1;
+    }
+    100%{
+        width: 50px;
+        height:50px;
+        opacity: 0;
+    }
+}
+
+.site-welcome{
+    display: none;
+    justify-content:center;
+    align-items:center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ccc;
+    z-index: 9999999;
+}
+.site-welcome.active{
+    display:flex;
 }
