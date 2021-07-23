@@ -22,9 +22,16 @@
 
 </head>
 <body>
+<div class="site-welcome active" id="siteWelcome">
+    <div class="loading">
+
+    </div>
+</div>
 <div class="header">
     <div class="header-wrap">
-        <a class="logo" href="<?php $this->options->siteUrl(); ?>">求索日记</a>
+        <a class="logo" href="<?php $this->options->siteUrl(); ?>">
+            求索日记
+        </a>
         <div></div>
         <ul class="nav" id="nav">
             <li class="nav-item <?php if($this->is('index')): ?><?php endif; ?>">
@@ -36,8 +43,12 @@
                 <a href="<?php $pages->permalink(); ?>" title="<?php $pages->title(); ?>"><?php $pages->title(); ?></a> 
             </li>
             <?php endwhile; ?>
-            
-            
+            <li>
+                <form action="<?php $this->options->siteUrl(); ?>/search">
+                    <img class="search search-form-input" src="https://shuxhan.com/usr/themes/Simple/img/search-block.png">
+                </form>
+            </li>
         </ul>
     </div>
+</div>
 </div>
