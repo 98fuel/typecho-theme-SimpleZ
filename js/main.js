@@ -10,7 +10,10 @@ document.addEventListener('DOMContentLoaded', function () {
             progressBar.value = window.scrollY;
       });
 });
-
+ window.onload=function(){
+    var siteWelcome = document.getElementById('siteWelcome');
+    siteWelcome.classList.remove('active');
+}
 
 // 返回顶部按钮
 $("#gotop").click(function(){
@@ -22,20 +25,6 @@ $("#gotop").click(function(){
 //  iframe
 $('iframe').wrap('<p class="iframe"></p>')
 
- 
-// 导航栏
-function block() {
-    $('.menu-icon-1').css('display','none')
-    $('.menu-icon-2').css('display','block')
-    $('.header .layui-nav').attr('class','layui-nav nav-block')
-    $('.nav-cover').css('display','block')
-}
-function none() {
-    $('.menu-icon-1').css('display','block')
-    $('.menu-icon-2').css('display','none')
-    $('.header .layui-nav').attr('class','layui-nav nav-none')
-    $('.nav-cover').css('display','none')
-}
 
 $('#theContentIndex').prepend('<h3>目录</h3>')
 
@@ -59,22 +48,34 @@ for(var i=1;i<myNav.length;i++){
    }
 }
 
+ 
 if(window.location.pathname=="/"){$('.header .nav li:nth-child(1) a').attr('class','active')}
+
+
 
 window.addEventListener('scroll', function () {
     var scrollTop = document.documentElement.scrollTop;
     if (scrollTop > 66) {
         $('.header').css('background','#29292a')
         $('.nav li a').css('color','#fff')
-        $('.header-wrap>div').html($('.post-title'))
+        $('.header-wrap>div').append($('.post-title'))
         $('.post-title').attr('class','post-title post-title-logo')
+        $('.search').attr('src','https://shuxhan.com/usr/themes/Simple/img/search-white.png')
     }else{
         $('.header').css('background','#fff')
         $('.nav li a').css('color','#343434')
         $('.post-title-wrap').append($('.post-title'))
         $('.post-title').attr('class','post-title')
+        $('.search').attr('src','https://shuxhan.com/usr/themes/Simple/img/search-block.png')
     }
 })
 
+$('.post-content a').attr('target','_blank')
+$('.post-content #theContentIndex a').attr('target','')
+$('.post-content .simple-mulu a').attr('target','')
+
+ 
+
 console.log('An interesting soul is very attractive.')
 console.log('世界与你我皆美好！')
+
