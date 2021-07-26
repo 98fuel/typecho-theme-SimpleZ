@@ -3,7 +3,7 @@
 }
 
 ::-webkit-scrollbar {
-    width: 16px;
+    width: 10px;
     height: 4px;
 }
 ::-webkit-scrollbar-track {
@@ -201,12 +201,36 @@ hr {
     padding: 10px 0;
     display: inline-block;
 }
+.article-list-detail {
+    margin-top: 0;
+    color: #888;
+    font-size: 15px;
+}
 
 .tags {
     font-size: 13px;
 }
 .tags a {
     color: #bbb;
+}
+
+.page-nav{
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+.page-nav-ul>a{
+    display: inline-block;
+    width: 30px;
+    height: 24px;
+    text-align: center;
+    line-height: 24px;
+    font-size: 18px;
+    background: #444;
+    color: #fff;
+}
+.page-nav-ul>*{
+    margin-right: 10px;
 }
 
 .post {
