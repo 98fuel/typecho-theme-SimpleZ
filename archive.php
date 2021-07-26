@@ -24,14 +24,18 @@
                 <span class="article-list-time"><?php $this->date('Y-m-d'); ?></span>
                 <div class="article-list-title">
                     <a href="<?php $this->permalink() ?>">
-                       <?php $this->title() ?>
+                       <?php $this->sticky();$this->title() ?>
                     </a>
                     <span class="tags"><?php $this->tags('&nbsp;&nbsp;', true, 'none'); ?></span>
                 </div>
-                
+                <p class="article-list-detail"><?php $this->excerpt(120, '...'); ?></p>
             </div>
         <?php endwhile; ?>
     </ul>
+    
+    <div class="page-nav">
+        <?php $this->pageNav('«', '»', 1, '...', array('wrapTag' => 'div', 'wrapClass' => 'page-nav-ul', 'itemTag' => '', 'currentClass' => 'current', )); ?>
+    </div>
     
     
     
