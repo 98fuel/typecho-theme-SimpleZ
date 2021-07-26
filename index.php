@@ -1,8 +1,8 @@
 <?php
 /**
- * SimpleZ 一款基于 typecho 程序的简约风双栏博客主题，专注于写作，抛弃了一切臃肿的功能，单纯为写作而存在。
+ * Simple 一款基于 typecho 程序的简约风双栏博客主题，专注于写作，抛弃了一切臃肿的功能，单纯为写作而存在。
  * 
- * @package SimpleZ
+ * @package Simple
  * @author 子舒(shuxhan)
  * @version 1.0.0
  * @link https://shuxhan.com
@@ -23,11 +23,16 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                     </a>
                     <span class="tags"><?php $this->tags('&nbsp;&nbsp;', true, 'none'); ?></span>
                 </div>
+                <p class="article-list-detail"><?php $this->excerpt(120, '...'); ?></p>
                 
             </div>
         <?php endwhile; ?>
         
     </ul>
+    
+    <div class="page-nav">
+        <?php $this->pageNav('«', '»', 1, '...', array('wrapTag' => 'div', 'wrapClass' => 'page-nav-ul', 'itemTag' => '', 'currentClass' => 'current', )); ?>
+    </div>
         
 
    
