@@ -30,9 +30,11 @@ ps: 下面是专门修改过的插件，专为适配本主题，使用其他插�
 
 ### 2. ViewsCounter
 
+下载地址：[https://github.com/Quarkay/Typecho-ViewsCounter](https://github.com/Quarkay/Typecho-ViewsCounter)
+
 文章浏览量统计插件，可设置对同一篇文章的多次浏览行为是否计入浏览量的时间间隔。
 
-1. 可以自行在 Github 搜索下载，然后在 post.php 将注释的代码解开
+1. 自行下载，然后在 post.php 将注释的代码解开
 2. 不需要可以忽略
 
 ## 图片展示
