@@ -22,15 +22,10 @@
 
 </head>
 <body>
-<div class="site-welcome active" id="siteWelcome">
-    <div class="loading">
-
-    </div>
-</div>
 <div class="header">
     <div class="header-wrap">
         <a class="logo" href="<?php $this->options->siteUrl(); ?>">
-            求索日记
+            <?php $this->author->gravatar('40') ?>
         </a>
         <div></div>
         <ul class="nav" id="nav">
@@ -49,6 +44,7 @@
                 </form>
             </li>
         </ul>
+        <span class="menu-icon">menu</span>
     </div>
 </div>
 </div>

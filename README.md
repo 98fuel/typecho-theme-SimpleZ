@@ -1,4 +1,4 @@
-<font style="text-align:center;max-width:400px;"><img style="width:100%" src="./screenshot.png"></font>
+<img style="width:100%" src="./screenshot.png">
 
 ## SimpleZ
 
@@ -6,7 +6,9 @@ SimpleZ 一款基于 typecho 的简约风单栏博客主题，专注于写作，
 
 占用极小，主要代码不到 200KB，是轻量级博客中的轻量级主题。
 
-demo: <a href="https://shuxhan.com" target="_blank">https://shuxhan.com</a>
+Demo: <a href="https://shuxhan.com" target="_blank">https://shuxhan.com</a>
+
+文档: [https://shuxhan.com/post/20210707.html](https://shuxhan.com/post/20210707.html)
 
 使用中出现问题请提 issues
 
@@ -20,7 +22,7 @@ demo: <a href="https://shuxhan.com" target="_blank">https://shuxhan.com</a>
 
 ## 插件
 
-### 1. ContentIndex
+### 1. 文章目录树（ContentIndex）
 
 为多个标题的文章生成目录。
 
@@ -28,14 +30,23 @@ ps: 下面是专门修改过的插件，专为适配本主题，使用其他插�
 
 下载地址：[https://github.com/Nov8nana/SimpleZ-ContentIndex](https://github.com/shuxhan/SimpleZ-ContentIndex)
 
-### 2. ViewsCounter
+### 2. 文章浏览量统计（ViewsCounter）
 
 下载地址：[https://github.com/Quarkay/Typecho-ViewsCounter](https://github.com/Quarkay/Typecho-ViewsCounter)
 
 文章浏览量统计插件，可设置对同一篇文章的多次浏览行为是否计入浏览量的时间间隔。
 
-1. 自行下载，然后在 post.php 将注释的代码解开
-2. 不需要可以忽略
+1. 默认不显示（没有该插件也不会报错）；
+2. 自行下载，然后在 post.php 将注释的代码解开；
+
+
+### 3. 实时搜索（ExSearch）
+
+下载地址：[https://github.com/AlanDecode/Typecho-Plugin-ExSearch](https://github.com/AlanDecode/Typecho-Plugin-ExSearch)
+
+为 Typecho 带来实时搜索体验。
+
+...
 
 ## 图片展示
 

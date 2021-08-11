@@ -9,14 +9,13 @@
     <span>&nbsp;<?php echo theAllViews();?></span>
     
     <div style="padding:10px 0;">
-        <span>&copy;  <?php echo date('Y'); ?>&nbsp;<?php $this->options->title() ?> </span>&nbsp;
-        <span> 备案号请复制粘贴到 footer.php 文件中 </span>
+        <span>&copy;  <?php echo date('Y'); ?>&nbsp;<?php $this->options->title() ?> </span>
     </div>
 
 </div>
 
 <!--返回顶部-->
-<a id="gotop">Scroll to top</a>
+<a id="gotop"><img src="<?php $this->options->themeUrl('img/top.png'); ?>"></a>
 <!--网页顶部进度条-->
 <progress id="content_progress" value="0"></progress>
 

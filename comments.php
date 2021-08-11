@@ -100,12 +100,7 @@ echo $commentClass;
                         <input autocomplete="off" type="url" name="url" id="url" lay-verify="url" class="form-input" placeholder="<?php if ($this->options->commentsRequireURL): ?>* <?php endif; ?><?php _e('(个人主页)https://'); ?>" value="<?php $this->remember('url'); ?>" <?php if ($this->options->commentsRequireURL): ?>required<?php endif; ?> />
                     </div>
                     
-                    
-                   
                 </div>
-               <div style="font-size:14px;margin-bottom:10px;margin-top:10px">
-                        （邮箱并非是必填项，如果你期待得到别人的回复，建议填写邮箱，如果只是简单的留言可以把邮箱空着，不要随手写一些例如：11@11.com 的垃圾邮箱，多次发现后，将会屏蔽您的ip，多谢。请友善评论，创造美好生活！）
-                    </div>
                 <?php endif; ?>
                 
                 <div class="form-submit">
@@ -117,12 +112,12 @@ echo $commentClass;
         <?php if ($comments->have()): ?>
             <br/>
             <h3><?php $this->commentsNum(_t('暂无评论'), _t('已有 %d 条评论')); ?></h3>
-            <br/>
+
             <div class="pinglun">
                 <?php $comments->listComments(); ?>
             </div>
-            <div class="page-navigator page-navigator-comment">
-                <?php $comments->pageNav('«', '»', 1, '...', array('wrapTag' => 'div', 'wrapClass' => 'layui-laypage layui-laypage-molv', 'itemTag' => '', 'currentClass' => 'current', )); ?>
+            <div class="page-nav">
+                <?php $comments->pageNav('«', '»', 1, '...', array('wrapTag' => 'div', 'wrapClass' => 'page-nav-ul', 'itemTag' => '', 'currentClass' => 'current', )); ?>
             </div>
         <?php endif; ?>
     <?php else: ?>
