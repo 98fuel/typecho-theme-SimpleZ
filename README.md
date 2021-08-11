@@ -20,6 +20,10 @@ Demo: <a href="https://shuxhan.com" target="_blank">https://shuxhan.com</a>
 
 如果对主题感兴趣可以提提 issues！
 
+## 使用
+
+下载完之后请将文件夹名改为 `SimpleZ` ，否则将会引起一些不必要的报错。
+
 ## 插件
 
 ### 1. 文章目录树（ContentIndex）

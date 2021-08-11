@@ -40,7 +40,7 @@
             <?php endwhile; ?>
             <li>
                 <form action="<?php $this->options->siteUrl(); ?>/search">
-                    <img class="search search-form-input" src="https://shuxhan.com/usr/themes/Simple/img/search-block.png">
+                    <img class="search search-form-input" src="https://shuxhan.com/usr/themes/SimpleZ/img/search-block.png">
                 </form>
             </li>
         </ul>

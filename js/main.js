@@ -55,7 +55,7 @@ window.addEventListener('scroll', function () {
       $('.nav li a').css('color','#fff')
       $('.header-wrap>div').append($('.post-title'))
       $('.post-title').attr('class','post-title post-title-logo')
-      $('.search').attr('src','https://shuxhan.com/usr/themes/Simple/img/search-white.png')
+      $('.search').attr('src','https://shuxhan.com/usr/themes/SimpleZ/img/search-white.png')
       $('.active').css('border-color','#fff')
       $('.menu-icon').css('color','#fff')
   }
@@ -65,7 +65,7 @@ window.addEventListener('scroll', function () {
       $('.nav li a').css('color','#343434')
       $('.post-title-wrap').append($('.post-title'))
       $('.post-title').attr('class','post-title')
-      $('.search').attr('src','https://shuxhan.com/usr/themes/Simple/img/search-block.png')
+      $('.search').attr('src','https://shuxhan.com/usr/themes/SimpleZ/img/search-block.png')
       $('.active').css('border-color','#343434')
       $('.menu-icon').css('color','#343434')
   }
