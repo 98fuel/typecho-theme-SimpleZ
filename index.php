@@ -3,8 +3,8 @@
  * SimpleZ 一款基于 typecho 程序的简约风双栏博客主题，专注于写作，抛弃了一切臃肿的功能，单纯为写作而存在。
  * 
  * @package SimpleZ
- * @author 子舒(Nov8nana)
- * @version 1.0.0
+ * @author 子舒 (Nov8nana)
+ * @version 2.8.23
  * @link https://shuxhan.com
  */
 

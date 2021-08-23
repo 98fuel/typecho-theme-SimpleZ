@@ -10,7 +10,6 @@ Demo: <a href="https://shuxhan.com" target="_blank">https://shuxhan.com</a>
 
 文档: [https://shuxhan.com/post/20210707.html](https://shuxhan.com/post/20210707.html)
 
-使用中出现问题请提 issues
 
 ## 介绍
 

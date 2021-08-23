@@ -3,17 +3,19 @@
 }
 
 textarea,input {
-    font-family: "NotoSansSC";
+    font-family: "SFProIcons";
 }
 .textarea {
     width:100%;
-    border: 1px solid #bbb;
+    border: 1px solid #515E63;
     outline: none;
     box-sizing: border-box;
     font-size: 15px;
     border-radius: 2px;
     padding: 5px;
     line-height: 1.5;
+    resize: none;
+    color: #515E63;
 }
 .form-item {
     font-size: 15px;
@@ -27,7 +29,7 @@ textarea,input {
 }
 
 .form-item > div > input {
-    border: 1px solid #bbb;
+    border: 1px solid #515E63;
     border-radius: 2px;
     outline: none;
     box-sizing: border-box;
@@ -35,8 +37,12 @@ textarea,input {
     height: 30px;
     line-height: 30px;
     display: inline-block;
+    color: #515E63;
 }
 
+.form-submit {
+    margin-top: 4px;
+}
 
 .form-submit button{
     font-size: 14px;
@@ -70,7 +76,6 @@ textarea,input {
 }
 
 .comment-title{
-    background: #fff;
     border: none;
     overflow: hidden;
 }
@@ -128,7 +133,7 @@ textarea,input {
 }
 .pinglun .t-p{
     position: absolute;
-    left: -45px;
+    left: -42px;
     top: 10px;
 }
 .pinglun .t-u {
@@ -208,6 +213,7 @@ textarea,input {
 .form-me {
     margin-bottom: 10px;
 }
+
 
 @media (max-width: 520px){
     .comment-list {

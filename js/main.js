@@ -1,15 +1,19 @@
 document.addEventListener('DOMContentLoaded', function () {
-    var winHeight = window.innerHeight,
-          docHeight = document.documentElement.scrollHeight,
-          progressBar = document.querySelector('#content_progress');
-    progressBar.max = docHeight - winHeight;
-    progressBar.value = window.scrollY;
+  var winHeight = window.innerHeight,
+  docHeight = document.documentElement.scrollHeight,
+  progressBar = document.querySelector('#content_progress');
+  progressBar.max = docHeight - winHeight;
+  progressBar.value = window.scrollY;
 
-    document.addEventListener('scroll', function () {
-          progressBar.max = document.documentElement.scrollHeight - window.innerHeight;
-          progressBar.value = window.scrollY;
-    });
+  document.addEventListener('scroll', function () {
+      progressBar.max = document.documentElement.scrollHeight - window.innerHeight;
+      progressBar.value = window.scrollY;
+      var gotopvalue = parseInt((progressBar.value)/(progressBar.max)*100)
+      var Gotopvalue = document.getElementById('gotopvalue');
+      Gotopvalue.innerText = gotopvalue + '%';
 });
+});
+
 
 // 返回顶部按钮
 $("#gotop").click(function(){
@@ -50,7 +54,7 @@ if(window.location.pathname=="/"){$('.header .nav li:nth-child(1) a').attr('clas
 
 window.addEventListener('scroll', function () {
   var scrollTop = document.documentElement.scrollTop;
-  if (scrollTop > 66) {
+  if (scrollTop > 90) {
       $('.header').css('background','var(--maincolor)')
       $('.nav li a').css('color','#fff')
       $('.header-wrap>div').append($('.post-title'))
@@ -60,8 +64,9 @@ window.addEventListener('scroll', function () {
       $('.menu-icon').css('color','#fff')
   }
   
-  if (scrollTop < 61){
-      $('.header').css('background','var(--backgroundimage)')
+  if (scrollTop < 85){
+      // $('.header').css('background','var(--backgroundimage)')
+      $('.header').css('background','none')
       $('.nav li a').css('color','#343434')
       $('.post-title-wrap').append($('.post-title'))
       $('.post-title').attr('class','post-title')
@@ -83,11 +88,19 @@ var i = 1;
 $('.menu-icon').click(function(){
   if(i==1){
       $('.nav').attr('class','nav menu-icon-1');
+      $('.cover').css('z-index','1')
       i = 2;
   }else {
       $('.nav').attr('class','nav menu-icon-2');
+      $('.cover').css('z-index','-1')
       i = 1;
   }
+})
+
+$('.cover').click(function() {
+  $('.nav').attr('class','nav menu-icon-2');
+  $('.cover').css('z-index','-1')
+  i = 1;
 })
 
 

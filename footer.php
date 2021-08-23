@@ -9,13 +9,17 @@
     <span>&nbsp;<?php echo theAllViews();?></span>
     
     <div style="padding:10px 0;">
-        <span>&copy;  <?php echo date('Y'); ?>&nbsp;<?php $this->options->title() ?> </span>
+        <span>&copy; 2020 - <?php echo date('Y'); ?>&nbsp;<?php $this->options->title() ?> </span>
     </div>
 
 </div>
 
 <!--返回顶部-->
-<a id="gotop"><img src="<?php $this->options->themeUrl('img/top.png'); ?>"></a>
+<a id="gotop">
+    <span id="gotopvalue">0%</span>
+    <span>^</span>
+</a>
+
 <!--网页顶部进度条-->
 <progress id="content_progress" value="0"></progress>
 
