@@ -9,12 +9,6 @@ function getPermalinkFromCoid($coid) {
 	return '<a href="#comment-'.$coid.'">@'.$row['author'].'</a>';
 }
 
-// 主题设置
-function themeConfig($form) {
-    $logoUrl = new Typecho_Widget_Helper_Form_Element_Text('logoUrl', NULL, NULL, _t('站点 LOGO 地址'), _t('在这里填入一个图片 URL 地址, 可以在网站标题前加上一个 LOGO'));
-    $form->addInput($logoUrl);
-}
-
 // 字数统计
 function  art_count ($cid){
     $db=Typecho_Db::get ();
@@ -90,24 +84,3 @@ function theAllViews(){
     $row = $db->fetchAll('SELECT SUM(VIEWS) FROM `typecho_contents`');
         echo '访问量：',number_format($row[0]['SUM(VIEWS)']);
 } 
-
-// 最热文章调用
-function getHotComments($limit = 10){
-    $db = Typecho_Db::get();
-    $result = $db->fetchAll($db->select()->from('table.contents')
-        ->where('status = ?','publish')
-        ->where('type = ?', 'post')
-        ->where('created <= unix_timestamp(now())', 'post')
-        ->limit($limit)
-        ->order('commentsNum', Typecho_Db::SORT_DESC)
-    );
-    if($result){
-        foreach($result as $val){
-            $val = Typecho_Widget::widget('Widget_Abstract_Contents')->push($val);
-            $post_title = htmlspecialchars($val['title']);
-            $permalink = $val['permalink'];
-            echo '<li><i></i><a href="'.$permalink.'" title="'.$post_title.'" >'.$post_title.'</a></li>';
-        }
-    }
-}
-

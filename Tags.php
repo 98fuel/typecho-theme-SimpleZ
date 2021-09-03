@@ -16,7 +16,15 @@
 
     <div class="post">
         <div class="title-page">
-            <h3>标签云</h3>
+            <h3>分类</h3>
+            <ul class="cotegory-ul">
+                <?php $this->widget('Widget_Metas_Category_List')
+                   ->parse('<li><a href="{permalink}">{name}<span>{count}</span></a></li>'); ?>
+            </ul>
+        </div>
+        <hr>
+        <div class="title-page">
+            <h3>标签</h3>
             <em>保持分类的好习惯，让我们更方便的管理和处理数据</em>
             <br>
 
@@ -29,9 +37,9 @@
         </div>
         <hr>
         <div class="title-page">
-            <h3>文章归档</h3>
+            <h3>归档</h3>
             <em><?php $stat = Typecho_Widget::widget('Widget_Stat');
-                _e('目前共计 %s 篇日志，共 %s 条评论，加油啊~', $stat->PublishedPostsNum, $stat->PublishedCommentsNum); ?></em>
+                _e('目前共计 %s 篇文章, 加油啊~', $stat->PublishedPostsNum); ?></em>
 
         </div>
         <ul class="archives">

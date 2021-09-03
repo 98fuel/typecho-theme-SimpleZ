@@ -27,11 +27,11 @@
                     </a>
                     
                 </div>
-                <span class="article-list-time"><?php $this->date('Y-m-d'); ?></span>
                 <p class="article-list-detail"><?php $this->excerpt(120, '...'); ?></p>
                 <div class="article-list-info">
-                     <span class="title-category"><?php $this->Category(', ', true, 'none'); ?></span>
-                     <span class="tags"> #<?php $this->tags('&nbsp;&nbsp;#', true, 'none'); ?></span>
+                    <span><?php $this->date('Y-m-d'); ?></span>
+                    <span class="title-category"><?php $this->Category(', ', true, 'none'); ?></span>
+                    <span class="tags"> #<?php $this->tags('&nbsp;&nbsp;#', true, 'none'); ?></span>
                 </div>
             </div>
         <?php endwhile; ?>

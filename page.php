@@ -13,9 +13,10 @@
             <?php $this->content(); ?>
         </div>
         
-        <div class="comments">
-            <?php $this->need('comments.php'); ?>
-        </div>
+        
+    </div>
+    <div class="comments">
+        <?php $this->need('comments.php'); ?>
     </div>
     
        

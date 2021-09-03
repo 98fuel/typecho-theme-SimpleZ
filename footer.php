@@ -17,7 +17,7 @@
 <!--返回顶部-->
 <a id="gotop">
     <span id="gotopvalue">0%</span>
-    <span>^</span>
+    <span>top</span>
 </a>
 
 <!--网页顶部进度条-->
