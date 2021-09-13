@@ -6,14 +6,11 @@ SimpleZ 一款基于 typecho 的简约风单栏博客主题，专注于写作，
 
 占用极小，主要代码不到 200KB，是轻量级博客中的轻量级主题，现已升级到2.0.0版本。
 
-Demo: <a href="https://shuxhan.com" target="_blank">https://shuxhan.com</a>
-
-文档: [https://shuxhan.com/post/20210707.html](https://shuxhan.com/post/20210707.html)
-
+Author: <a href="https://shuxhan.com" target="_blank">https://shuxhan.com</a>
 
 ## 介绍
 
-其实这是我自用的主题，抛弃了60%的模板字段，保留了最原始的博客文章数据，界面简洁，色系协调。
+抛弃了60%的模板字段，保留了最原始的博客文章数据，界面简洁，色系协调。
 
 暂时只写了自己需要的功能，如果后续有朋友提出 issues ，我将会持续更新。
 
