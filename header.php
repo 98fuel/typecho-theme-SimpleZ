@@ -16,10 +16,10 @@
     <!-- 通过自有函数输出HTML头部信息 -->
     <?php $this->header(); ?>
     <link rel="stylesheet" href="https://cdn.shuxhan.com/normalize.css">
-    <link rel="stylesheet" href="<?php $this->options->themeUrl('css/style.css'); ?>?t=<?php echo time(); ?>">
+    <link rel="stylesheet" href="<?php $this->options->themeUrl('css/style.css'); ?>">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://img.shuxhan.com/favicon.ico" rel="shortcut icon">
     <script src="<?php $this->options->themeUrl('js/jquery3.6.0.js'); ?>"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
 </head>
 <body>
 <div class="header">
@@ -29,7 +29,7 @@
         </a>
         <ul class="nav" id="nav">
             <li class="nav-item <?php if($this->is('index')): ?><?php endif; ?>">
-                <a href="<?php $this->options->siteUrl(); ?>"><?php _e('Home'); ?></a> 
+                <a href="<?php $this->options->siteUrl(); ?>"><?php _e('首页'); ?></a> 
             </li>
             <?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
             <?php while($pages->next()): ?>
@@ -39,7 +39,8 @@
             <?php endwhile; ?>
             <li class="search-wrap">
                 <form action="<?php $this->options->siteUrl(); ?>/search">
-                    <img class="search search-form-input" src="https://shuxhan.com/usr/themes/SimpleZ/img/search-white.png">
+                    <!--<img class="search search-form-input" src="https://shuxhan.com/usr/themes/SimpleZ/img/search-white.png">-->
+                    <i class="search-form-input fa fa-search"></i>
                 </form>
             </li>
         </ul>

@@ -20,14 +20,14 @@
     <?php if ($this->have()): ?>
     <ul>
         <?php while($this->next()): ?>
-            <div class="article-list">
+            <div class="article-list article-archive-list">
                 <div class="article-list-title">
                     <a href="<?php $this->permalink() ?>">
                        <?php $this->sticky();$this->title() ?>
                     </a>
                     
                 </div>
-                <p class="article-list-detail"><?php $this->excerpt(120, '...'); ?></p>
+                <!--<p class="article-list-detail"><?php $this->excerpt(120, '...'); ?></p>-->
                 <div class="article-list-info">
                     <span><?php $this->date('Y-m-d'); ?></span>
                     <span class="title-category"><?php $this->Category(', ', true, 'none'); ?></span>

@@ -14,10 +14,9 @@
                 
                 <div class="title-msg">
                     <div>
-                        <span><?php $this->date('Y-m-d'); ?> </span>
+                        <span>发布时间: <?php $this->date('Y-m-d'); ?> </span>
                         <span>· <?php $this->Category(', ', true, 'none'); ?></span>
-                        <span>· 本文共 <?php echo art_count($this->cid); ?> 字</span>
-                        <span>· 阅读: <?php echo ViewsCounter_Plugin::getViews(); ?> 次</span>
+                        <span>· 阅读: <span id="twikoo_visitors"></span> 次</span>
                     </div>
                     <div>
                         <span class="tags"> #<?php $this->tags('&nbsp;&nbsp;#', true, 'none'); ?></span>
@@ -27,8 +26,9 @@
                 
             <!--最后更新时间-->
             <div class="post-content">
+                <div class="autoMenu" id="autoMenu" data-autoMenu></div>
                 <?php $this->content(); ?>
-                <p style="margin-top:100px;">( 最后更新时间为&nbsp;&nbsp;<span><?php echo date('Y-m-d H:i:s' , $this->modified); ?></span>&nbsp;&nbsp;(<span class="lately-c"><?php echo date('Y-m-d H:i:s' , $this->modified); ?></span>)，如果资源无效请在评论区留言。 )</p>
+                <p style="margin-top:40px;font-size:14px;color:#888;">更新时间: <span><?php echo date('Y-m-d H:i:s' , $this->modified); ?></span></p>
             </div>
 
             
@@ -49,6 +49,7 @@
         </div>
     
 </div>
+
 
 <?php $this->need('footer.php'); ?>
 

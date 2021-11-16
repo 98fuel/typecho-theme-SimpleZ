@@ -1,36 +1,29 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 
 <div class="footer">
-    <span>
-        <?php echo online_users() ?>
-        <?php echo timer_stop();?>
-    </span>
-   
-    <span>&nbsp;<?php echo theAllViews();?></span>
-    
+    <span>&copy; 2020 - <?php echo date('Y'); ?> · <?php $this->options->title() ?> </span> ·  <span>已运行 <span id="days"> </span> 天</span> 
     <div style="padding:10px 0;">
-        <span>&copy; 2020 - <?php echo date('Y'); ?>&nbsp;<?php $this->options->title() ?> </span>
+        <a href="https://beian.miit.gov.cn/" target="_blank"><span> 浙ICP备2021002261号-1</span></a> ·
+        <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010802011426" target="_blank">
+            <span style="margin: 0;"> 浙公网安备 33010802011426号</span>
+        </a>
     </div>
+
 
 </div>
 
 <!--返回顶部-->
-<a id="gotop">
-    <span id="gotopvalue">0%</span>
-    <span>top</span>
-</a>
-
-<!--网页顶部进度条-->
-<progress id="content_progress" value="0"></progress>
+	<a class="top-btn" id="">
+		<div>
+			<i></i>
+			<i></i>
+		</div>
+	</a>
 
 <?php $this->footer(); ?>
+<script src="<?php $this->options->themeUrl('js/toc.js'); ?>"></script>
 <script src="<?php $this->options->themeUrl('js/main.js'); ?>"></script>
-<script src="https://cdn.jsdelivr.net/gh/Tokinx/Lately@master/lately.js"></script>
-<script>
-    Lately({
-        'target' : '.lately-a,.lately-b,.lately-c'
-    })
-</script>
+
 
 </body>
 </html>

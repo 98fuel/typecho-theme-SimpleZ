@@ -4,7 +4,7 @@
  * 
  * @package SimpleZ
  * @author Nov8nana
- * @version 2.0.0
+ * @version 3.0.0
  * @link https://shuxhan.com
  */
 
@@ -24,7 +24,6 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                        <?php $this->title() ?>
                     </a>
                 </div>
-                <!--<span class="article-list-time"><?php $this->date('Y-m-d'); ?></span>-->
                 <p class="article-list-detail"><?php $this->excerpt(120, '...'); ?></p>
                 <div class="article-list-info">
                     <span><?php $this->date('Y-m-d'); ?></span>
