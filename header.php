@@ -6,49 +6,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="renderer" content="webkit">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title><?php $this->archiveTitle(array(
+    <title><?php if($this->_currentPage>1) echo '第 '.$this->_currentPage.' 页 - '; ?><?php $this->archiveTitle(array(
             'category'  =>  _t('分类 %s 下的文章'),
             'search'    =>  _t('包含关键字 %s 的文章'),
             'tag'       =>  _t('标签 %s 下的文章'),
+            'date'      =>  _t('在<span> %s </span>发布的文章'),
             'author'    =>  _t('%s 发布的文章')
-        ), '', ' - '); ?><?php $this->options->title(); ?></title>
+        ), '', ' - '); ?><?php if ($this->is('post')) $this->category(',', false);?><?php if ($this->is('post')) echo ' - ';?><?php $this->options->title(); ?></title>
 
+	<link rel="stylesheet" href="<?php $this->options->themeUrl('code/pre.css'); ?>">
+    <link rel="stylesheet" href="<?php $this->options->themeUrl('/main.css'); ?>">
+    <link rel='icon' href='https://img.xiabanlo.cn/favicon.ico' type='image/x-icon' />
     <!-- 通过自有函数输出HTML头部信息 -->
-    <?php $this->header(); ?>
-    <link rel="stylesheet" href="https://cdn.shuxhan.com/normalize.css">
-    <link rel="stylesheet" href="<?php $this->options->themeUrl('css/style.css'); ?>">
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="https://img.shuxhan.com/favicon.ico" rel="shortcut icon">
-    <script src="<?php $this->options->themeUrl('js/jquery3.6.0.js'); ?>"></script>
+    <?php $this->header("generator=&template=&pingback=&wlw=&xmlrpc=&rss1=&atom=&rss2=/feed"); ?>
+    <script src="https://cdn.xiabanlo.cn/list/jquery3.6.0.js"></script>
+    <link rel="stylesheet" href="https://cdn.xiabanlo.cn/list/zoom.css">
 </head>
 <body>
-<div class="header">
-    <div class="header-wrap">
-        <a class="logo" href="<?php $this->options->siteUrl(); ?>">
-            <span><?php $this->options->title() ?></span>
-        </a>
-        <ul class="nav" id="nav">
-            <li class="nav-item <?php if($this->is('index')): ?><?php endif; ?>">
-                <a href="<?php $this->options->siteUrl(); ?>"><?php _e('首页'); ?></a> 
-            </li>
+<div class="container">
+    <header id="header">
+        <h1 class="site-title">
+            <?php if ($this->options->logoUrl): ?>
+                <a href="<?php $this->options->siteUrl(); ?>">
+                    <img src="<?php $this->options->logoUrl() ?>" alt="<?php $this->options->title() ?>" />
+                </a>
+            <?php else: ?>
+                <a href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title() ?></a>
+            <?php endif; ?>
+        </h1>
+        <p class="site-description"><?php $this->options->description() ?></p>
+    </header>
+    <div class="menubar">
+    <div class="mhome"><a <?php if($this->is('index')): ?> class="current"<?php endif; ?> href="<?php $this->options->siteUrl(); ?>"><?php _e('首页'); ?></a></div>
+    <button id="menubutton" disable="enable" onclick="var qr = document.getElementById('menu'); if (qr.style.display === 'block') {qr.style.display='none';} else {qr.style.display='block'}">
+                <span><i></i><i></i><i></i></span></button>
+    <div id="menu">
+        <nav id="nav-menu" role="navigation">
+        <li class="whome"><a <?php if($this->is('index')): ?> class="current"<?php endif; ?> href="<?php $this->options->siteUrl(); ?>"><?php _e('首页'); ?></a></li>
+
             <?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
             <?php while($pages->next()): ?>
-            <li class="nav-item <?php if($this->is('page', $pages->slug)): ?><?php endif; ?>">
-                <a href="<?php $pages->permalink(); ?>" title="<?php $pages->title(); ?>"><?php $pages->title(); ?></a> 
-            </li>
+            <li><a <?php if($this->is('page', $pages->slug)): ?> class="current"<?php endif; ?> href="<?php $pages->permalink(); ?>" title="<?php $pages->title(); ?>"><?php $pages->title(); ?></a></li>
             <?php endwhile; ?>
-            <li class="search-wrap">
-                <form action="<?php $this->options->siteUrl(); ?>/search">
-                    <!--<img class="search search-form-input" src="https://shuxhan.com/usr/themes/SimpleZ/img/search-white.png">-->
-                    <i class="search-form-input fa fa-search"></i>
-                </form>
-            </li>
-        </ul>
-        
-        <div class="menu-icon">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+			<li id="search">
+			    <button class="search-form-input">搜索</button>
+			</li>
+			<div class="clearfix"></div>
+        </nav>
     </div>
-</div>
+    <div class="clearfix"></div>
+    </div>

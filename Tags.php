@@ -1,46 +1,39 @@
 <?php
-
 /**
- * 标签
- *
- * @package custom
- */
-?>
+* 标签
+*
+* @package custom
+*/
 
-<?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
-<?php $this->need('header.php'); ?>
-
-
-<div class="main">
-
-
-    <div class="post">
-        <div class="title-page">
-            <h3>分类</h3>
-            <ul class="cotegory-ul">
-                <?php $this->widget('Widget_Metas_Category_List')
-                   ->parse('<li><a href="{permalink}">{name}<span>{count}</span></a></li>'); ?>
+$this->need('header.php'); ?>
+<main id="main">
+    <article class="post">
+        <h2 class="post-title">分类</h2>
+        <ul class="cate">
+            <?php $this->widget('Widget_Metas_Category_List')->to($category); ?>
+            <?php while($category->next()): ?>
+            <li><a <?php if ($this->is('post')): ?><?php if ($this->category == $category->slug): ?> class="current"<?php endif; ?><?php else: ?><?php if ($this->is('category', $category->slug)): ?> class="current"<?php endif; ?><?php endif; ?> href="<?php $category->permalink(); ?>"><?php $category->name(); ?></a></a></li>
+            <?php endwhile; ?>
+        </ul>
+        <hr>
+		<h2 class="post-title"><?php $this->title() ?></h2>
+        <div class="post-content">
+            <ul class="tags">
+                <?php if($this->slug=="tags"): ?>
+                <?php Typecho_Widget::widget('Widget_Metas_Tag_Cloud')->to($tags); ?>
+                <?php if($tags->have()): ?>
+                    <?php while ($tags->next()): ?>
+                    <li><a 
+                        style="color:rgb(<?php echo(rand(0,255)); ?>,<?php echo(rand(0,255)); ?>,<?php echo(rand(0,255)); ?>)" 
+                        href="<?php $tags->permalink();?>"><?php $tags->name(); ?></a></li>
+                    <?php endwhile; ?>
+                <?php endif; ?>
+                <?php else: ?>
+                <?php $this->content(); ?>
+                <?php endif; ?>
             </ul>
         </div>
-        <hr>
-        <div class="title-page">
-            <h3>标签</h3>
-            <em>保持分类的好习惯，让我们更方便的管理和处理数据</em>
-            <br>
-
-        </div>
-        <div class="tags-content">
-            <?php $this->widget('Widget_Metas_Tag_Cloud', 'ignoreZeroCount=1&limit=99')->to($tags); ?>
-            <?php while ($tags->next()) : ?>
-                <a href="<?php $tags->permalink(); ?>" title='<?php $tags->name(); ?>'><?php $tags->name(); ?></a>
-            <?php endwhile; ?>
-        </div>
-        <hr>
-        
-
-    </div>
-
-
-</div>
+    </article>
+</main>
 
 <?php $this->need('footer.php'); ?>

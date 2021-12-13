@@ -1,25 +1,13 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 <?php $this->need('header.php'); ?>
-
-<div class="main">
-    <div class="post" itemprop="articleBody">
-        <div class="post-title-wrap">
-            <div class="post-title">
-                <?php $this->title() ?>
-            </div>
-        </div>
-        
+<main id="main">
+    <article class="post">
+			<h2 class="post-title"><?php $this->title() ?></h2>
         <div class="post-content">
             <?php $this->content(); ?>
         </div>
-        
-        
-    </div>
-    <div class="comments">
-        <?php $this->need('comments.php'); ?>
-    </div>
-    
-       
-</div>
+    </article>
+    <?php $this->need('comments.php'); ?>
+</main>
 
 <?php $this->need('footer.php'); ?>

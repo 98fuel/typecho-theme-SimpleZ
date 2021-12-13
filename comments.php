@@ -1,83 +1,58 @@
-<?php if (!defined('__TYPECHO_ROOT_DIR__')) exit;?>
-<!--<article id="comments">-->
-<!--    <?php $this->comments('comment')->to($comments); ?>-->
-<!--    <?php if($this->allow('comment')): ?>-->
-<!--        <div id="<?php $this->respondId(); ?>" class="respond">-->
-<!--            <div class="comment-head"><p>发表评论<span class="cancel-comment-reply"><?php $comments->cancelReply(); ?></span></p></div>-->
-<!--            <form method="post" action="<?php $this->commentUrl() ?>" id="comment_form">-->
-<!--                <?php if($this->user->hasLogin()): ?>-->
-<!--                <p><a href="<?php $this->options->profileUrl(); ?>"><?php $this->user->screenName(); ?></a>. <a href="<?php $this->options->logoutUrl(); ?>" title="退出">退出</a></p>-->
-<!--                <?php else: ?>-->
-<!--                <ul class="login_meta">-->
-<!--                    <li>   -->
-<!--                        <input type="text" name="author" id="author" placeholder="称呼*" value="<?php $this->remember('author'); ?>" required/>-->
-<!--                        <input type="text" name="mail" id="mail" placeholder="电子邮件*" value="<?php $this->remember('mail'); ?>" required/>-->
-<!--                        <input type="text" name="url" id="url" placeholder="网站" value="<?php $this->remember('url'); ?>"/>-->
-<!--                    </li>-->
-<!--                </ul>-->
-<!--                <?php endif; ?>-->
-<!--                <p>-->
-<!--                    <textarea rows="3" cols="50" name="text" id="textarea" placeholder="说点什么~" required ><?php $this->remember('text'); ?></textarea>-->
-<!--                    <span><?php $comments->smilies(); ?></span>-->
-<!--                </p>-->
-<!--                <p>-->
-<!--                    <button type="submit" class="submit">评 论</button>-->
-<!--                </p>-->
-<!--            </form>-->
-<!--        </div>-->
-<!--    <?php else: ?>-->
-<!--    <div class="comments_state"><p>评论已关闭</p></div>-->
-<!--    <?php endif; ?>-->
-<!--    <?php if ($comments->have()): ?>-->
-<!--        <div class="comments_count"><?php $this->commentsNum(_t('当前暂无评论'), _t('仅有一条评论'), _t('已有 %d 条评论')); ?></div>-->
-<!--        <div class="comments_box">-->
-<!--            <?php $comments->listComments(); ?>-->
-<!--            <?php $comments->pageNav(); ?>-->
-<!--        </div>-->
-<!--    <?php endif; ?>-->
-<!--</article>-->
+<?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
+<div id="comments">
+    <?php $this->comments()->to($comments); ?>
 
+    <?php if($this->allow('comment')): ?>
+        <?php if ($this->is('attachment')) : ?>
+        <?php _e(''); ?>
+        <?php else: ?>
+    <div id="<?php $this->respondId(); ?>" class="respond">
+        <div class="cancel-comment-reply">
+        <?php $comments->cancelReply(); ?>
+        </div>
+    
+    	<h2><?php _e('发表评论'); ?></h2>
+    	<form method="post" action="<?php $this->commentUrl() ?>" id="comment-form" role="form">
+            <?php if($this->user->hasLogin()): ?>
+    		<p><?php _e('登录身份: '); ?><a href="<?php $this->options->profileUrl(); ?>"><?php $this->user->screenName(); ?></a>. <a href="<?php $this->options->logoutUrl(); ?>" title="Logout"><?php _e('退出'); ?> &raquo;</a></p>
+            <?php else: ?>
+    		<div class="comment-text">
+    		    <p>
+        			<input autocomplete="off" placeholder="昵称 *" type="text" name="author" id="author" class="text" value="" required />
+        		</p>
+        		<p>
+        			<input autocomplete="off" placeholder="邮箱<?php if ($this->options->commentsRequireMail): ?> *<?php endif; ?>" type="email" name="mail" id="mail" class="text" value=""<?php if ($this->options->commentsRequireMail): ?> required<?php endif; ?> />
+        		</p>
+        		<p>
+        			<input autocomplete="off" type="url" name="url" id="url" class="text" placeholder="网站<?php if ($this->options->commentsRequireURL): ?> *<?php endif; ?>" value=""<?php if ($this->options->commentsRequireURL): ?> required<?php endif; ?> />
+        		</p>
+    		</div>
+		    <p>
+                <nocompress><?php spam_protection_math();?></nocompress>
+		    </p>
+            <?php endif; ?>
+    		<div class="textarea-main">
+    		    
+                <textarea rows="8" cols="50" name="text" id="textarea" class="textarea" onkeydown="if(event.ctrlKey&&event.keyCode==13){document.getElementById('misubmit').click();return false};" placeholder="<?php _e('参与讨论....'); ?>" required ><?php $this->remember('text'); ?></textarea>
+                <?php $comments->smilies(); ?>
+    		</div>
+    		
+    		<p>
+                <button type="submit" class="submit" id="misubmit"><?php _e('发表评论'); ?></button>
+            </p>
+    	</form>
+    </div>
+    <?php endif; ?>
+    <?php else: ?>
+    <?php _e(''); ?>
+    <?php endif; ?>
+    
+    <?php if ($comments->have()): ?>
+	<div class="respondtitle"><h2><?php $this->commentsNum(_t('暂无评论'), _t('仅有 1 条评论'), _t('已有 %d 条评论')); ?></h2></div>
+    
+    <?php $comments->listComments(); ?>
 
-<link rel="stylesheet" href="<?php $this->options->themeUrl('css/comments.css'); ?>">  <!-- 改行始终存在，切勿删掉 -->
-
-
-<section id="comments">
-  <div class="comments-title">
-    <p>Leave a comment to join the discussion.</p>
-  </div>
-  <div id="tcomment"></div>
-  <script src="https://cdn.jsdelivr.net/npm/twikoo@1.4.9/dist/twikoo.all.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.1.8/css/lightgallery.css">
-  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.1.8/lightgallery.min.js"></script>
-  <script>
-    twikoo.init({
-      envId: '',  // twikoo 腾讯云函数id，使用时查看 twikoo 官方文档
-      el: '#tcomment',
-      path: 'window.TWIKOO_MAGIC_PATH||window.location.pathname',
-      lang: 'zh-CN',
-      onCommentLoaded: function () {
-        var commentContents = document.getElementsByClassName('tk-content');
-        for (var i = 0; i < commentContents.length; i++) {
-          var commentItem = commentContents[i];
-          var imgEls = commentItem.getElementsByTagName('img');
-          if (imgEls.length > 0) {
-            for (var j = 0; j < imgEls.length; j++) {
-              var imgEl = imgEls[j];
-              var aEl = document.createElement('a');
-              aEl.setAttribute('class', 'tk-lg-link');
-              aEl.setAttribute('href', imgEl.getAttribute('src'));
-              aEl.setAttribute('data-src', imgEl.getAttribute('src'));
-              aEl.appendChild(imgEl.cloneNode(false));
-              imgEl.parentNode.insertBefore(aEl, imgEl.nextSibling);
-              imgEl.remove();
-            }
-            lightGallery(commentItem, {
-              selector: '.tk-lg-link',
-              share: false
-            });
-          }
-        }
-      }
-    })
-  </script>
-</section>
+    <?php $comments->pageNav('&laquo; 前一页', '后一页 &raquo;'); ?>
+    
+    <?php endif; ?>
+</div>

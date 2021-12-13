@@ -1,48 +1,32 @@
 <?php
 /**
- * SimpleZ 一款基于 typecho 程序的简约风双栏博客主题，专注于写作，抛弃了一切臃肿的功能，单纯为写作而存在。
+ * 一款单页风格博客主题
  * 
  * @package SimpleZ
- * @author Nov8nana
- * @version 3.0.0
- * @link https://shuxhan.com
+ * @author 子舒
+ * @version 3.0
+ * @link https://xiabanlo.cn
  */
-
+ 
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
- $this->need('header.php');
+$this->need('header.php');
 ?>
-
-<div class="main">
-    <ul>
-        
-        <?php while($this->next()): ?>
-            
-            <div class="article-list">
-                
-                <div class="article-list-title">
-                    <a href="<?php $this->permalink() ?>">
-                       <?php $this->title() ?>
-                    </a>
-                </div>
-                <p class="article-list-detail"><?php $this->excerpt(120, '...'); ?></p>
-                <div class="article-list-info">
-                    <span><?php $this->date('Y-m-d'); ?></span>
-                    <span class="title-category"><?php $this->Category(', ', true, 'none'); ?></span>
-                    <span class="tags"> #<?php $this->tags('&nbsp;&nbsp;#', true, 'none'); ?></span>
-                </div>
-                
+<main id="main">
+	<?php while($this->next()): ?>
+        <article class="post">
+			<h2 class="post-title"><a href="<?php $this->permalink() ?>"><?php $this->title() ?></a></h2>
+			<ul class="meta">
+				<li><time><?php $this->date('Y-m-d'); ?></time></li>•
+				<li><?php $this->category(','); ?></li>•
+				<li><span><?php get_post_view($this) ?></span> 阅读</li>•
+				<li><a href="<?php $this->permalink() ?>#comments"><?php $this->commentsNum('评论', '1 评论', '%d 评论'); ?></a></li>
+			</ul>
+            <div class="post-excerpt">
+    			<?php $this->excerpt(180); ?>
             </div>
-        <?php endwhile; ?>
-        
-    </ul>
-    
-    <div class="page-nav">
-        <?php $this->pageNav('«', '»', 1, '...', array('wrapTag' => 'div', 'wrapClass' => 'page-nav-ul', 'itemTag' => '', 'currentClass' => 'current', )); ?>
-    </div>
-        
-
-   
-</div>
-
+            <div class="clearfix"></div>
+        </article>
+	<?php endwhile; ?>
+    <?php $this->pageNav('&laquo; 上一页', '下一页 &raquo;'); ?>
+</main>
 <?php $this->need('footer.php'); ?>
-
