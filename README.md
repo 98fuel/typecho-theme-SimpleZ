@@ -1,6 +1,10 @@
-<img style="width:100%" src="./screenshot.png">
 
-## SimpleZ
+## 本主题放弃维护了，其实也没有什么大的bug，就放这里了。
+
+## 欢迎查看开发的新主题 [Typecho-theme-Anghunk](https://github.com/anghunk/Typecho-theme-Anghunk) 。
+
+
+**SimpleZ**
 
 SimpleZ 一款基于 typecho 的简约风单栏博客主题，专注于写作，抛弃了一切臃肿的功能，单纯为写作而存在。
 
@@ -8,15 +12,13 @@ SimpleZ 一款基于 typecho 的简约风单栏博客主题，专注于写作，
 
 2021-12-13 最后更新
 
-demo展示: <a href="https://xiabanlo.cn" target="_blank">https://xiabanlo.cn</a>
+demo展示: <a href="https://xiabanlo.cn" target="_blank">https://imhan.cn</a>
 
 ## 介绍
 
 抛弃了绝大部分的模板字段，保留了最原始的博客文章数据和功能，界面简洁，色系协调。
 
-暂时只写了自己需要的功能，如果后续有朋友提出 issues ，我将会持续更新。
-
-如果对主题感兴趣可以给我留言！[留言板](https://xiabanlo.cn/message)
+如果对主题感兴趣可以给我留言！[留言板](https://imhan.cn/message)
 
 ## 使用
 
